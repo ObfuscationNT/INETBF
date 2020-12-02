@@ -9,15 +9,20 @@ setup(
     name='INETBF Network Testing Library',
     maintainer="Drakeo",
     maintainer_email="obfuscate@riseup.net",
+    author="Drakeo",
+    author_email="obfuscate@riseup.net",
     install_requires=[
         "numpy", "psutil", "cython", "requests", 
         "pymysql", "paramiko"
     ],
     description="Framework set for testing persistence and hardening of a protocol",
-    
+    url="https://github.com/ObfuscationNT/INETBF",
     ext_modules=[
         cythonize(pyx_file)
         for pyx_file in program_files
         if(program_files.endswith(".pyx"))   
-    ]
+    ],
+    package_data={
+        "": ["*.pyd", "*.json", "*.cfg"]
+    }
 )
